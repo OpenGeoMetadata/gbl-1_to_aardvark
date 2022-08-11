@@ -7,7 +7,7 @@ A set of sample JSONs in the 1.0 schema is included for testing.
 ## How it works
 The script will open the existing JSONs, scan the field names (keys), use the crosswalk.csv file to convert the names, and write new JSONs with the new field names. If will also update the field type from single to array if needed.
 
-If a field name is present in the existing JSONs, it will include them unchanged in the new JSONS.
+If a field name is present in the existing JSONs, but not in the crosswalk, it will include them unchanged in the new JSONS.
 
 ## Limitations
 This script only changes the field name and type for elements that can be directly crosswalked. Any fields that are not listed in crosswalk.csv will be carried over to the new Aardvark JSONS. This prevents data loss, but means that the new documents will still include deprecated fields.
