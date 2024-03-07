@@ -12,7 +12,7 @@ dir_new_schema = 'aardvark/'
 # Load the crosswalk.csv and make it a dictionary
 
 crosswalk = {}
-with open(dir_crosswalk) as f:
+with open(dir_crosswalk, encoding='utf8') as f:
     reader = csv.reader(f)
     fields = next(reader)
     for record in reader:
@@ -24,7 +24,7 @@ with open(dir_crosswalk) as f:
 # Function to update the metadata schema
 def schema_update(filepath):
     # Open the JSON file with schema GBL 1.0
-    with open(filepath) as fr:
+    with open(filepath, encoding='utf8') as fr:
         # Load its content and make a new dictionary
         data = json.load(fr)
 
@@ -38,7 +38,7 @@ def schema_update(filepath):
 
     # Write updated JSON to a new folder
     filepath_updated = dir_new_schema + file
-    with open(filepath_updated, 'w') as fw:
+    with open(filepath_updated, 'w', encoding='utf8') as fw:
         j = json.dumps(data, indent=2)
         fw.write(j)
 
