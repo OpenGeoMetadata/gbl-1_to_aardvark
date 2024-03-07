@@ -38,7 +38,7 @@ def schema_update(filepath):
 
     # Write updated JSON to a new folder
     filepath_updated = dir_new_schema + file
-    with open(filepath_updated, 'w', , encoding='utf8') as fw:
+    with open(filepath_updated, 'w', encoding='utf8') as fw:
         j = json.dumps(data, indent=2)
         fw.write(j)
 
