@@ -32,6 +32,9 @@ def schema_update(filepath):
         for old_schema, new_schema in crosswalk.items():
             if old_schema in data:
                 data[new_schema] = data.pop(old_schema)
+
+        # Change the metadata type:
+        data["gbl_mdVersion_s"] = "Aardvark"
             
     # check for multi-valued fields - if so, convert its value to an array
     data = string2array(data)
