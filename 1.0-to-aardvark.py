@@ -35,6 +35,10 @@ def schema_update(filepath):
 
         # Change the metadata type:
         data["gbl_mdVersion_s"] = "Aardvark"
+
+        # Remove geoblacklight_version
+        if "geoblacklight_version" in data:
+            data.pop("geoblacklight_version")
             
     # check for multi-valued fields - if so, convert its value to an array
     data = string2array(data)
